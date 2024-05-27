@@ -645,7 +645,8 @@ public class login extends javax.swing.JFrame {
                    at = rs2.getString("accounttype");
                    if (at.equalsIgnoreCase("Teacher")){
                        teacher_pov tp = new teacher_pov();
-
+                       
+                       tp.setemail(em);
                        tp.setVisible(true);
                        this.dispose();
                    }
@@ -660,6 +661,8 @@ public class login extends javax.swing.JFrame {
                 pst.close();
                 con.close();
             }
+            
+             
             
         }catch(Exception e){
             System.out.println("Error: "+ e.getMessage());

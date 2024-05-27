@@ -535,7 +535,44 @@ public class signup extends javax.swing.JFrame {
                 password.setText("");
                 password2.setText("");
                 
+                
+                
+                
+                
+                Statement stmt3 = null;
+                   stmt3 = con.createStatement();
+                 String sql3 = "CREATE TABLE IF NOT EXISTS " + em + "_chatlog (" +
+              "other VARCHAR(255), " +           
+              "person VARCHAR(255))";
+
+                 stmt3.executeUpdate(sql3);
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
                 JOptionPane.showMessageDialog(new JFrame(), "Registered Succesfully", "Dialog", JOptionPane.INFORMATION_MESSAGE);
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
                 con.close();
                 login lg = new login();
                 lg.setVisible(true);

@@ -173,10 +173,16 @@ public class teacher_pov extends javax.swing.JFrame {
         jLabel34 = new javax.swing.JLabel();
         subject_attendance_combobox = new javax.swing.JComboBox<>();
         student_information = new javax.swing.JPanel();
+        jPanel24 = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        student_info_table = new javax.swing.JTable();
+        studentId_search = new javax.swing.JTextField();
+        jLabel35 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
         jPanel12 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
+        account_email = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         courseManagement_button = new javax.swing.JButton();
         grades_button = new javax.swing.JButton();
@@ -189,13 +195,13 @@ public class teacher_pov extends javax.swing.JFrame {
         jPanel6 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jButton9 = new javax.swing.JButton();
-        jDesktopPane1 = new javax.swing.JDesktopPane();
-        notification_button = new javax.swing.JButton();
         jDesktopPane2 = new javax.swing.JDesktopPane();
         message_button = new javax.swing.JButton();
         jPanel11 = new javax.swing.JPanel();
-        notification_panel = new javax.swing.JDesktopPane();
-        message_panel = new javax.swing.JDesktopPane();
+        message_box = new javax.swing.JTextField();
+        jButton13 = new javax.swing.JButton();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        chat_table = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -231,7 +237,8 @@ public class teacher_pov extends javax.swing.JFrame {
         tab.setPreferredSize(new java.awt.Dimension(700, 550));
         tab.setLayout(new java.awt.CardLayout());
 
-        home.setBackground(new java.awt.Color(0, 0, 0));
+        home.setBackground(new java.awt.Color(204, 204, 204));
+        home.setForeground(new java.awt.Color(204, 204, 204));
 
         javax.swing.GroupLayout homeLayout = new javax.swing.GroupLayout(home);
         home.setLayout(homeLayout);
@@ -1548,30 +1555,118 @@ public class teacher_pov extends javax.swing.JFrame {
 
         tab.add(attendance, "card5");
 
+        jPanel24.setBackground(new java.awt.Color(255, 255, 255));
+
+        student_info_table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Full Name", "Student ID", "Contact Information", "Date of Birth", "Gender", "Year Level", "Course"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane6.setViewportView(student_info_table);
+        if (student_info_table.getColumnModel().getColumnCount() > 0) {
+            student_info_table.getColumnModel().getColumn(0).setResizable(false);
+            student_info_table.getColumnModel().getColumn(1).setResizable(false);
+            student_info_table.getColumnModel().getColumn(2).setResizable(false);
+            student_info_table.getColumnModel().getColumn(3).setResizable(false);
+            student_info_table.getColumnModel().getColumn(4).setResizable(false);
+            student_info_table.getColumnModel().getColumn(5).setResizable(false);
+            student_info_table.getColumnModel().getColumn(6).setResizable(false);
+        }
+
+        jLabel35.setText("Student ID:");
+
+        jButton4.setText("Search");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        jButton11.setText("Refresh");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
+        jPanel24.setLayout(jPanel24Layout);
+        jPanel24Layout.setHorizontalGroup(
+            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel24Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 817, Short.MAX_VALUE)
+                    .addGroup(jPanel24Layout.createSequentialGroup()
+                        .addComponent(jLabel35)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(studentId_search, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton11)))
+                .addContainerGap())
+        );
+        jPanel24Layout.setVerticalGroup(
+            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel24Layout.createSequentialGroup()
+                .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel24Layout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel35)
+                            .addComponent(studentId_search, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton4))
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel24Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton11)
+                        .addGap(7, 7, 7)))
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 479, Short.MAX_VALUE)
+                .addGap(23, 23, 23))
+        );
+
         javax.swing.GroupLayout student_informationLayout = new javax.swing.GroupLayout(student_information);
         student_information.setLayout(student_informationLayout);
         student_informationLayout.setHorizontalGroup(
             student_informationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 841, Short.MAX_VALUE)
+            .addGroup(student_informationLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         student_informationLayout.setVerticalGroup(
             student_informationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 550, Short.MAX_VALUE)
+            .addGroup(student_informationLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         tab.add(student_information, "card6");
 
         jPanel12.setBackground(new java.awt.Color(0, 51, 0));
 
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Account Username");
+        account_email.setForeground(new java.awt.Color(255, 255, 255));
+        account_email.setText("BETA VERSION");
 
         jLabel5.setFont(new java.awt.Font("sansserif", 1, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Welcome!");
-
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Account Type");
 
         jPanel9.setBackground(new java.awt.Color(255, 255, 255));
         jPanel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 102, 0), 4));
@@ -1686,9 +1781,8 @@ public class teacher_pov extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel7))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(account_email))
+                .addContainerGap(45, Short.MAX_VALUE))
             .addGroup(jPanel12Layout.createSequentialGroup()
                 .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -1699,10 +1793,8 @@ public class teacher_pov extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(account_email)
+                .addGap(28, 28, 28)
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -1776,34 +1868,15 @@ public class teacher_pov extends javax.swing.JFrame {
                 .addContainerGap(10, Short.MAX_VALUE))
         );
 
-        notification_button.setForeground(new java.awt.Color(255, 255, 255));
-        notification_button.setText("Notification");
-        notification_button.setBorderPainted(false);
-        notification_button.setContentAreaFilled(false);
-
-        jDesktopPane1.setLayer(notification_button, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
-        jDesktopPane1.setLayout(jDesktopPane1Layout);
-        jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(notification_button)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(notification_button, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(8, Short.MAX_VALUE))
-        );
-
         message_button.setForeground(new java.awt.Color(255, 255, 255));
         message_button.setText(" Message");
         message_button.setBorderPainted(false);
         message_button.setContentAreaFilled(false);
+        message_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                message_buttonActionPerformed(evt);
+            }
+        });
 
         jDesktopPane2.setLayer(message_button, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -1812,45 +1885,78 @@ public class teacher_pov extends javax.swing.JFrame {
         jDesktopPane2Layout.setHorizontalGroup(
             jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane2Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(65, 65, 65)
                 .addComponent(message_button)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jDesktopPane2Layout.setVerticalGroup(
             jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDesktopPane2Layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(message_button, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
-        jPanel11.setLayout(new java.awt.CardLayout());
+        jPanel11.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel11.setForeground(new java.awt.Color(255, 255, 255));
 
-        javax.swing.GroupLayout notification_panelLayout = new javax.swing.GroupLayout(notification_panel);
-        notification_panel.setLayout(notification_panelLayout);
-        notification_panelLayout.setHorizontalGroup(
-            notification_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 215, Short.MAX_VALUE)
-        );
-        notification_panelLayout.setVerticalGroup(
-            notification_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 213, Short.MAX_VALUE)
-        );
+        jButton13.setText("Send");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
 
-        jPanel11.add(notification_panel, "card2");
+        chat_table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "-", "-"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
 
-        javax.swing.GroupLayout message_panelLayout = new javax.swing.GroupLayout(message_panel);
-        message_panel.setLayout(message_panelLayout);
-        message_panelLayout.setHorizontalGroup(
-            message_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 215, Short.MAX_VALUE)
-        );
-        message_panelLayout.setVerticalGroup(
-            message_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 213, Short.MAX_VALUE)
-        );
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane8.setViewportView(chat_table);
+        if (chat_table.getColumnModel().getColumnCount() > 0) {
+            chat_table.getColumnModel().getColumn(0).setResizable(false);
+            chat_table.getColumnModel().getColumn(1).setResizable(false);
+        }
 
-        jPanel11.add(message_panel, "card3");
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addComponent(message_box)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton13)))
+                .addContainerGap())
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(message_box, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton13))
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -1861,12 +1967,9 @@ public class teacher_pov extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jDesktopPane2))
-                            .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jDesktopPane2))
                         .addGap(6, 6, 6)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -1892,12 +1995,10 @@ public class teacher_pov extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jDesktopPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jDesktopPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(24, 24, 24)
+                        .addComponent(jDesktopPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -2986,6 +3087,9 @@ student_information.setVisible(false);
         
     }//GEN-LAST:event_course_info_buttonActionPerformed
 
+    
+    
+    
     private void student_info_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_student_info_buttonActionPerformed
         
         home_button.setForeground(Color.BLACK);
@@ -3002,6 +3106,54 @@ course_information.setVisible(false);
 grade.setVisible(false);
 attendance.setVisible(false);
 student_information.setVisible(true);
+
+
+
+String student_id2 = studentId_search.getText();
+
+DefaultTableModel model = (DefaultTableModel) student_info_table.getModel();
+        model.setRowCount(0);
+         ResultSet rs;
+
+        try{
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        String url = "jdbc:MySQL://localhost:3306/sms";
+        String us = "root";
+        String ps = "";
+            
+        Connection con = DriverManager.getConnection(url, us, ps);
+            
+            
+            
+        PreparedStatement pst = con.prepareStatement("SELECT last_name, first_name, student_id, contact_information, date_of_birth, gender, year_level, course  FROM students");
+        
+        rs = pst.executeQuery();
+
+         while (rs.next()) {
+                String last_name = rs.getString("last_name");
+                String first_name = rs.getString("first_name");
+                String student_id = rs.getString("student_id");
+                String contact_information = rs.getString("contact_information");
+                String date_of_birth = rs.getString("date_of_birth");
+                String gender = rs.getString("gender");
+                String year_level = rs.getString("year_level");
+                String course = rs.getString("course");
+                
+                
+                
+                
+                
+                
+                
+                
+                model.addRow(new Object[]{last_name+", "+first_name, student_id, contact_information, date_of_birth, gender, year_level, year_level, course});
+            }
+
+        
+        } catch(Exception e){
+            
+        }
+
 
 
     }//GEN-LAST:event_student_info_buttonActionPerformed
@@ -3752,6 +3904,147 @@ try {
         
     }//GEN-LAST:event_jButton17ActionPerformed
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+       String student_id = studentId_search.getText();
+
+DefaultTableModel model = (DefaultTableModel) student_info_table.getModel();
+        model.setRowCount(0);
+         ResultSet rs;
+
+        try{
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        String url = "jdbc:MySQL://localhost:3306/sms";
+        String us = "root";
+        String ps = "";
+            
+        Connection con = DriverManager.getConnection(url, us, ps);
+            
+            
+            
+        PreparedStatement pst = con.prepareStatement("SELECT last_name, first_name, contact_information, date_of_birth, gender, year_level, course  FROM students WHERE student_id=?");
+        pst.setString(1, student_id);
+        rs = pst.executeQuery();
+
+        if (rs.next()) {
+                String last_name = rs.getString("last_name");
+                String first_name = rs.getString("first_name");
+                
+                String contact_information = rs.getString("contact_information");
+                String date_of_birth = rs.getString("date_of_birth");
+                String gender = rs.getString("gender");
+                String year_level = rs.getString("year_level");
+                String course = rs.getString("course");
+                
+                
+                
+                
+                
+                
+                
+                
+                model.addRow(new Object[]{last_name+", "+first_name, student_id, contact_information, date_of_birth, gender, year_level, year_level, course});
+            }
+
+        
+        } catch(Exception e){
+            
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        DefaultTableModel model = (DefaultTableModel) student_info_table.getModel();
+        model.setRowCount(0);
+         ResultSet rs;
+
+        try{
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        String url = "jdbc:MySQL://localhost:3306/sms";
+        String us = "root";
+        String ps = "";
+            
+        Connection con = DriverManager.getConnection(url, us, ps);
+            
+            
+            
+        PreparedStatement pst = con.prepareStatement("SELECT last_name, first_name, student_id, contact_information, date_of_birth, gender, year_level, course  FROM students");
+        
+        rs = pst.executeQuery();
+
+         while (rs.next()) {
+                String last_name = rs.getString("last_name");
+                String first_name = rs.getString("first_name");
+                String student_id = rs.getString("student_id");
+                String contact_information = rs.getString("contact_information");
+                String date_of_birth = rs.getString("date_of_birth");
+                String gender = rs.getString("gender");
+                String year_level = rs.getString("year_level");
+                String course = rs.getString("course");
+                
+                
+                
+                
+                
+                
+                
+                
+                model.addRow(new Object[]{last_name+", "+first_name, student_id, contact_information, date_of_birth, gender, year_level, year_level, course});
+            }
+
+        
+        } catch(Exception e){
+            
+        }
+    }//GEN-LAST:event_jButton11ActionPerformed
+private String emailcheck;
+public void setemail(String em){
+    emailcheck = em;
+        account_email.setText(em);
+}
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        
+        
+        updateChat();
+        
+        
+        
+        
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void message_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_message_buttonActionPerformed
+        updateChat();
+    }//GEN-LAST:event_message_buttonActionPerformed
+private void updateChat(){
+    DefaultTableModel model = (DefaultTableModel) chat_table.getModel();
+        model.setRowCount(0);
+         ResultSet rs;
+
+        try{
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        String url = "jdbc:MySQL://localhost:3306/sms";
+        String us = "root";
+        String ps = "";
+            
+        Connection con = DriverManager.getConnection(url, us, ps);
+            
+            
+            
+        PreparedStatement pst = con.prepareStatement("SELECT left, right FROM "+emailcheck+"_chatlog");
+        
+        rs = pst.executeQuery();
+
+         while (rs.next()) {
+                String left = rs.getString("left");
+                String right = rs.getString("right");
+                model.addRow(new Object[]{"", right});
+                model.addRow(new Object[]{left, ""});
+                
+            }
+
+        
+        } catch(Exception e){
+            
+        }
+}
     /**
      * @param args the command line arguments
      */
@@ -3788,12 +4081,14 @@ try {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel account_email;
     private javax.swing.JButton add_course;
     private javax.swing.JCheckBox all_students_check;
     private javax.swing.JPanel attendance;
     private javax.swing.JButton attendance_button;
     private javax.swing.JTable attendance_table;
     private javax.swing.JLabel average_grade_text;
+    private javax.swing.JTable chat_table;
     private javax.swing.JButton check_button;
     private javax.swing.JLabel course;
     private javax.swing.JButton courseManagement_button;
@@ -3820,16 +4115,18 @@ try {
     private javax.swing.JTextField instructor_textfield;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JDesktopPane jDesktopPane2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -3859,6 +4156,7 @@ try {
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
@@ -3872,8 +4170,6 @@ try {
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -3892,6 +4188,7 @@ try {
     private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel23;
+    private javax.swing.JPanel jPanel24;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
@@ -3904,7 +4201,9 @@ try {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
@@ -3912,10 +4211,8 @@ try {
     private javax.swing.JLabel last_name;
     private javax.swing.JLabel last_name_label;
     private javax.swing.JComboBox<String> meeting_combobox;
+    private javax.swing.JTextField message_box;
     private javax.swing.JButton message_button;
-    private javax.swing.JDesktopPane message_panel;
-    private javax.swing.JButton notification_button;
-    private javax.swing.JDesktopPane notification_panel;
     private javax.swing.JLabel pass_check;
     private javax.swing.JComboBox<String> pick_course_combobox;
     private javax.swing.JButton refresh_button;
@@ -3927,10 +4224,12 @@ try {
     private javax.swing.JTextField search_student_grade_table;
     private javax.swing.JButton search_student_information;
     private javax.swing.JComboBox<String> semester_count;
+    private javax.swing.JTextField studentId_search;
     private javax.swing.JTable student_course_table;
     private javax.swing.JTextField student_id_search;
     private javax.swing.JTextField student_id_textfield;
     private javax.swing.JButton student_info_button;
+    private javax.swing.JTable student_info_table;
     private javax.swing.JPanel student_information;
     private javax.swing.JComboBox<String> student_name_combobox;
     private javax.swing.JTextField student_search_textfield;
