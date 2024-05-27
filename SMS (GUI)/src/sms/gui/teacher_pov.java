@@ -73,6 +73,7 @@ public class teacher_pov extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         last_name_label = new javax.swing.JLabel();
         first_name_label = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
         search_student_information = new javax.swing.JButton();
         course_information = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -118,7 +119,41 @@ public class teacher_pov extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         course_name = new javax.swing.JLabel();
         grade = new javax.swing.JPanel();
+        jPanel19 = new javax.swing.JPanel();
+        jPanel20 = new javax.swing.JPanel();
+        search_student_button = new javax.swing.JButton();
+        jLabel38 = new javax.swing.JLabel();
+        student_search_textfield = new javax.swing.JTextField();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        last_name = new javax.swing.JLabel();
+        first_name = new javax.swing.JLabel();
+        course = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        jPanel21 = new javax.swing.JPanel();
+        jLabel36 = new javax.swing.JLabel();
+        jButton16 = new javax.swing.JButton();
+        jButton17 = new javax.swing.JButton();
+        search_student_grade_table = new javax.swing.JTextField();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        grade_table = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
+        average_grade_text = new javax.swing.JLabel();
+        table_title = new javax.swing.JLabel();
+        pass_check = new javax.swing.JLabel();
+        jPanel23 = new javax.swing.JPanel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        grade_textfield = new javax.swing.JTextField();
+        subject_combobox_grades = new javax.swing.JComboBox<>();
+        submit_button_grade = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        semester_count = new javax.swing.JComboBox<>();
+        jLabel40 = new javax.swing.JLabel();
+        jPanel22 = new javax.swing.JPanel();
         attendance = new javax.swing.JPanel();
         jPanel14 = new javax.swing.JPanel();
         jPanel18 = new javax.swing.JPanel();
@@ -277,14 +312,14 @@ public class teacher_pov extends javax.swing.JFrame {
             course_table.getColumnModel().getColumn(1).setPreferredWidth(330);
         }
 
-        add_course.setText("Add a Course");
+        add_course.setText("Add Course");
         add_course.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 add_courseActionPerformed(evt);
             }
         });
 
-        remove_course.setText("Remove a Course");
+        remove_course.setText("Remove Course");
         remove_course.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 remove_courseActionPerformed(evt);
@@ -429,6 +464,13 @@ public class teacher_pov extends javax.swing.JFrame {
         first_name_label.setForeground(new java.awt.Color(0, 102, 102));
         first_name_label.setText("Daniel Albert");
 
+        jButton6.setText("Remove Course");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
@@ -453,7 +495,7 @@ public class teacher_pov extends javax.swing.JFrame {
                                 .addComponent(student_id_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(search_student, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(130, Short.MAX_VALUE))
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(jLabel10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -461,8 +503,10 @@ public class teacher_pov extends javax.swing.JFrame {
                             .addComponent(courses_combobox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel8Layout.createSequentialGroup()
                                 .addGap(11, 11, 11)
-                                .addComponent(upload_course, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(68, Short.MAX_VALUE))))))
+                                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(upload_course, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE))
+                                .addContainerGap())))))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -488,6 +532,8 @@ public class teacher_pov extends javax.swing.JFrame {
                     .addComponent(jLabel10))
                 .addGap(26, 26, 26)
                 .addComponent(upload_course)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton6)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -639,9 +685,9 @@ public class teacher_pov extends javax.swing.JFrame {
                             .addGroup(jPanel15Layout.createSequentialGroup()
                                 .addComponent(jButton7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton3)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jLabel22))
+                                .addComponent(jButton3))
+                            .addComponent(jLabel22))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel15Layout.setVerticalGroup(
@@ -945,23 +991,361 @@ public class teacher_pov extends javax.swing.JFrame {
 
         tab.add(course_information, "card7");
 
-        jLabel3.setText("jLabel3");
+        jPanel19.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel19.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 102, 0), 3));
+
+        jPanel20.setBackground(new java.awt.Color(255, 255, 255));
+
+        search_student_button.setText("Search");
+        search_student_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                search_student_buttonActionPerformed(evt);
+            }
+        });
+
+        jLabel38.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel38.setText("Student's ID:");
+
+        jLabel41.setText("Last Name:");
+
+        jLabel42.setText("First Name:");
+
+        jLabel44.setText("Course:");
+
+        last_name.setForeground(new java.awt.Color(0, 153, 153));
+        last_name.setText("Unabia");
+
+        first_name.setForeground(new java.awt.Color(0, 153, 153));
+        first_name.setText("Sir Kent");
+
+        course.setForeground(new java.awt.Color(0, 153, 153));
+        course.setText("OOP");
+
+        jLabel46.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        jLabel46.setText("Select Student");
+
+        javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
+        jPanel20.setLayout(jPanel20Layout);
+        jPanel20Layout.setHorizontalGroup(
+            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel20Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel46)
+                    .addGroup(jPanel20Layout.createSequentialGroup()
+                        .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel20Layout.createSequentialGroup()
+                                .addGap(79, 79, 79)
+                                .addComponent(student_search_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel45))
+                            .addGroup(jPanel20Layout.createSequentialGroup()
+                                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel41)
+                                    .addComponent(jLabel38)
+                                    .addComponent(jLabel42)
+                                    .addComponent(jLabel44))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(last_name)
+                                    .addComponent(first_name)
+                                    .addComponent(course))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(search_student_button)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel20Layout.setVerticalGroup(
+            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel20Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel46)
+                .addGap(20, 20, 20)
+                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel45)
+                    .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel38)
+                        .addComponent(student_search_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(search_student_button)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel41)
+                    .addComponent(last_name))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel42)
+                    .addComponent(first_name))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(course)
+                    .addComponent(jLabel44))
+                .addGap(25, 25, 25))
+        );
+
+        jPanel21.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel36.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel36.setText("Student's ID:");
+
+        jButton16.setText("Refresh");
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
+
+        jButton17.setText("Search");
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton17ActionPerformed(evt);
+            }
+        });
+
+        grade_table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Subjects", "1st Semester", "2nd Semester", "3rd Semester", "Subject Grade"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane7.setViewportView(grade_table);
+        if (grade_table.getColumnModel().getColumnCount() > 0) {
+            grade_table.getColumnModel().getColumn(0).setResizable(false);
+            grade_table.getColumnModel().getColumn(1).setResizable(false);
+            grade_table.getColumnModel().getColumn(2).setResizable(false);
+            grade_table.getColumnModel().getColumn(3).setResizable(false);
+            grade_table.getColumnModel().getColumn(4).setResizable(false);
+        }
+
+        jLabel3.setText("Average Grade:");
+
+        average_grade_text.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        average_grade_text.setForeground(new java.awt.Color(0, 153, 153));
+        average_grade_text.setText("1.5");
+
+        table_title.setForeground(new java.awt.Color(0, 102, 102));
+        table_title.setText("Unabia, Sir Kent's Grades");
+
+        pass_check.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        pass_check.setForeground(new java.awt.Color(0, 153, 153));
+        pass_check.setText("Did He/She Pass?");
+
+        javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
+        jPanel21.setLayout(jPanel21Layout);
+        jPanel21Layout.setHorizontalGroup(
+            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel21Layout.createSequentialGroup()
+                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel21Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 474, Short.MAX_VALUE))
+                    .addGroup(jPanel21Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(average_grade_text, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(pass_check)
+                        .addGap(101, 101, 101))
+                    .addGroup(jPanel21Layout.createSequentialGroup()
+                        .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel21Layout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(jLabel36)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(search_student_grade_table, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton17))
+                            .addGroup(jPanel21Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(table_title)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton16)))
+                .addContainerGap())
+        );
+        jPanel21Layout.setVerticalGroup(
+            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel21Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel21Layout.createSequentialGroup()
+                        .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel36)
+                            .addComponent(search_student_grade_table, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(5, 5, 5)
+                        .addComponent(table_title))
+                    .addComponent(jButton16, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(average_grade_text)
+                    .addComponent(pass_check))
+                .addGap(59, 59, 59))
+        );
+
+        jPanel23.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel37.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel37.setText("Set Semester:");
+
+        jLabel39.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel39.setText("Subject:");
+
+        jLabel43.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel43.setText("Grade:");
+
+        grade_textfield.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                grade_textfieldActionPerformed(evt);
+            }
+        });
+
+        subject_combobox_grades.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                subject_combobox_gradesActionPerformed(evt);
+            }
+        });
+
+        submit_button_grade.setText("Submit");
+        submit_button_grade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submit_button_gradeActionPerformed(evt);
+            }
+        });
+
+        jButton8.setText("Remove");
+
+        semester_count.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
+
+        jLabel40.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        jLabel40.setText("Add Grade");
+
+        javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
+        jPanel23.setLayout(jPanel23Layout);
+        jPanel23Layout.setHorizontalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel23Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel40)
+                    .addGroup(jPanel23Layout.createSequentialGroup()
+                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel43)
+                            .addComponent(jLabel37)
+                            .addComponent(jLabel39))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel23Layout.createSequentialGroup()
+                                .addComponent(grade_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel23Layout.createSequentialGroup()
+                                        .addGap(13, 13, 13)
+                                        .addComponent(jButton8))
+                                    .addGroup(jPanel23Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(submit_button_grade))))
+                            .addComponent(semester_count, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(subject_combobox_grades, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel23Layout.setVerticalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel23Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jLabel40)
+                .addGap(28, 28, 28)
+                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(semester_count, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel37))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel39)
+                    .addComponent(subject_combobox_grades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(submit_button_grade)
+                    .addComponent(grade_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel43))
+                .addGap(9, 9, 9)
+                .addComponent(jButton8)
+                .addGap(22, 22, 22))
+        );
+
+        jPanel22.setBackground(new java.awt.Color(204, 255, 255));
+
+        javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
+        jPanel22.setLayout(jPanel22Layout);
+        jPanel22Layout.setHorizontalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel22Layout.setVerticalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
+        jPanel19.setLayout(jPanel19Layout);
+        jPanel19Layout.setHorizontalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel19Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jPanel23, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel20, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(526, Short.MAX_VALUE))
+        );
+        jPanel19Layout.setVerticalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel19Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel19Layout.createSequentialGroup()
+                        .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(50, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout gradeLayout = new javax.swing.GroupLayout(grade);
         grade.setLayout(gradeLayout);
         gradeLayout.setHorizontalGroup(
             gradeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(gradeLayout.createSequentialGroup()
-                .addGap(160, 160, 160)
-                .addComponent(jLabel3)
-                .addContainerGap(640, Short.MAX_VALUE))
+            .addGap(0, 1364, Short.MAX_VALUE)
+            .addGroup(gradeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(gradeLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         gradeLayout.setVerticalGroup(
             gradeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(gradeLayout.createSequentialGroup()
-                .addGap(107, 107, 107)
-                .addComponent(jLabel3)
-                .addContainerGap(427, Short.MAX_VALUE))
+            .addGap(0, 592, Short.MAX_VALUE)
+            .addGroup(gradeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(gradeLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         tab.add(grade, "card4");
@@ -1076,7 +1460,7 @@ public class teacher_pov extends javax.swing.JFrame {
                                 .addComponent(jLabel34)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(subject_attendance_combobox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel18Layout.createSequentialGroup()
                                 .addComponent(jLabel32)
@@ -1093,7 +1477,7 @@ public class teacher_pov extends javax.swing.JFrame {
                                 .addComponent(student_name_combobox, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(all_students_check)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(refresh_button))))
                     .addGroup(jPanel18Layout.createSequentialGroup()
                         .addComponent(jLabel28)
@@ -2134,6 +2518,7 @@ update_attendance();
         String ps = "";
         Statement stmt = null;
         Statement stmt2 = null;
+        Statement stmt3 = null;
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -2171,7 +2556,24 @@ update_attendance();
                             update_CourseList();
                             
 // remove table
-     
+      PreparedStatement pst3 = con.prepareStatement("SELECT subject FROM "+course+"_subjects");
+   
+
+        ResultSet rs = pst3.executeQuery();
+
+         while (rs.next()) {
+                
+                stmt3 = con.createStatement();
+                        String subject = rs.getString("subject");
+
+                        String tableName3 = course2 + "_" + subject + "_attendance"; 
+                        
+                        String sql3 = "DROP TABLE IF EXISTS " + tableName3;
+                        stmt3.executeUpdate(sql3);    
+             
+  
+                
+            }
   
             stmt = con.createStatement();
             String tableName = course2 + "_schedule"; 
@@ -2187,8 +2589,12 @@ update_attendance();
             String sql2 = "DROP TABLE IF EXISTS " + tableName;
             stmt.executeUpdate(sql2);
             
+            
+            
+          
+            
 
-                                  
+                              
                             
         
         
@@ -2363,7 +2769,7 @@ try {
     Connection con = DriverManager.getConnection(url, us, ps);
     ResultSet rs = null;
     PreparedStatement pst = null;
-
+    Statement stmt;
     if ("".equals(sid)) {
         JOptionPane.showMessageDialog(new JFrame(), "Input Student's ID", "Dialog", JOptionPane.ERROR_MESSAGE);
     } else if ("".equals(chosen_course)) {
@@ -2395,6 +2801,28 @@ try {
         }
     }
 
+    
+    
+
+    
+    stmt = con.createStatement();
+                String sql = "CREATE TABLE IF NOT EXISTS " + sid + "_grades (" +
+                        "subjects VARCHAR(255), " +  
+                        "first_sem VARCHAR(255), " +
+                        "second_sem VARCHAR(255), " +
+                        "third_sem VARCHAR(255));";
+
+                 stmt.executeUpdate(sql);
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
     if (rs != null) rs.close();
     if (pst != null) pst.close();
     con.close();
@@ -2583,6 +3011,7 @@ student_information.setVisible(true);
         String subject_id = subject_id_textfield.getText();
         String course = (String) pick_course_combobox.getSelectedItem();
         String inst = instructor_textfield.getText();
+        ResultSet rs;
         int detected = 0;
         for (int i = 0; i < subject.length(); i++) {
             if (subject.charAt(i) == ' ') {
@@ -2638,8 +3067,21 @@ student_information.setVisible(true);
 
                  stmt3.executeUpdate(sql3);
                    
-                   
-                   
+              PreparedStatement pst2 = con.prepareStatement("SELECT last_name, first_name FROM students WHERE course=?");
+              pst2.setString(1, course);
+              PreparedStatement pst3 = con.prepareStatement("INSERT INTO " + course + "_"+subject+"_attendance (Name_of_Student) SELECT ? WHERE NOT EXISTS (SELECT 1 FROM  " + course + "_"+subject+"_attendance WHERE Name_of_Student = ?)");
+
+              rs = pst2.executeQuery();
+              while (rs.next()) {
+              String last_name = rs.getString("last_name");
+              String first_name = rs.getString("first_name");
+
+        // Check if the subject already exists in the student's grades table
+               pst3.setString(1, last_name+"_"+first_name);
+              pst3.setString(2, last_name+"_"+first_name);
+              pst3.executeUpdate();
+             }     
+                
                    
                 
               update_subject_table();  
@@ -2703,6 +3145,7 @@ try {
                         String tableName = course + "_" + subject + "_attendance"; 
                         String sql2 = "DROP TABLE IF EXISTS " + tableName;
                         stmt.executeUpdate(sql2);
+                        
                         
                         
                         
@@ -2913,13 +3356,13 @@ update_attendance();
                 
                 
                    
-                   update_attendance_table(); 
+                   
                    
                    
                   } else {
                       
                       
-                      pst = con.prepareStatement("UPDATE "+course+ "_" + subject + "_attendance SET "+meet+"=? WHERE Name_of_Student=?");
+                   pst = con.prepareStatement("UPDATE "+course+ "_" + subject + "_attendance SET "+meet+"=? WHERE Name_of_Student=?");
                    pst.setString(1, "");
                    pst.setString(2, student);
 
@@ -2927,12 +3370,12 @@ update_attendance();
                 
                 
                   
-                   update_attendance_table();
+                 
                    
                    
                   }
                 
-                   
+                   update_attendance_table();
                 
                 
             
@@ -2947,6 +3390,367 @@ update_attendance();
        
 update_attendance_table();
     }//GEN-LAST:event_subject_attendance_comboboxActionPerformed
+
+    private void search_student_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_student_buttonActionPerformed
+        String student_id = student_search_textfield.getText();
+String last_name1;
+String first_name1;
+String course1 = null;
+String course_id1;
+
+ResultSet rs;
+ResultSet rs2;
+ResultSet rs3;
+
+try {
+    Class.forName("com.mysql.cj.jdbc.Driver");
+    String url = "jdbc:MySQL://localhost:3306/sms";
+    String us = "root";
+    String ps = "";
+
+    Connection con = DriverManager.getConnection(url, us, ps);
+
+    PreparedStatement pst = con.prepareStatement("SELECT last_name, first_name, course, course_id FROM students WHERE student_id=?");
+    pst.setString(1, student_id);
+    rs = pst.executeQuery();
+
+    if (rs.next()) {
+        last_name1 = rs.getString("last_name");
+        first_name1 = rs.getString("first_name");
+        course1 = rs.getString("course");
+        course_id1 = rs.getString("course_id");
+
+        last_name.setText(last_name1);
+        first_name.setText(first_name1);
+        course.setText(course1);
+        table_title.setText(last_name1 + ", " + first_name1 + "'s Grades");
+    }
+
+    subject_combobox_grades.removeAllItems();
+    PreparedStatement pst2 = con.prepareStatement("SELECT subject FROM " + course1 + "_subjects");
+    System.out.println(course1);
+
+    PreparedStatement pst3 = con.prepareStatement("INSERT INTO " + student_id + "_grades (subjects) SELECT ? WHERE NOT EXISTS (SELECT 1 FROM " + student_id + "_grades WHERE subjects = ?)");
+
+    rs2 = pst2.executeQuery();
+    while (rs2.next()) {
+        String subject = rs2.getString("subject");
+        subject_combobox_grades.addItem(subject);
+
+        // Check if the subject already exists in the student's grades table
+        pst3.setString(1, subject);
+        pst3.setString(2, subject);
+        pst3.executeUpdate();
+    }
+
+    update_GradeTable();
+
+} catch (Exception e) {
+
+}
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_search_student_buttonActionPerformed
+
+    private void grade_textfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_grade_textfieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_grade_textfieldActionPerformed
+
+    private void subject_combobox_gradesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subject_combobox_gradesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_subject_combobox_gradesActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        String sid = student_id_textfield.getText();
+String chosen_course = (String) courses_combobox.getSelectedItem();
+
+try {
+    Class.forName("com.mysql.cj.jdbc.Driver");
+    String url = "jdbc:mysql://localhost:3306/sms";
+    String us = "root";
+    String ps = "";
+
+    Connection con = DriverManager.getConnection(url, us, ps);
+    ResultSet rs = null;
+    PreparedStatement pst = null;
+    Statement stmt2;
+    
+    
+    if ("".equals(sid)) {
+        JOptionPane.showMessageDialog(new JFrame(), "Input Student's ID", "Dialog", JOptionPane.ERROR_MESSAGE);
+    }  else {
+        
+            
+
+            pst = con.prepareStatement("UPDATE students SET course_id=?, course=? WHERE student_id=?");
+            pst.setString(1, "");
+            pst.setString(2, "");
+            pst.setString(3, sid);
+
+            int rowsUpdated = pst.executeUpdate();
+            update_studentCourse_table();
+
+            if (rowsUpdated > 0) {
+                JOptionPane.showMessageDialog(new JFrame(), "Course has been removed successfully for student ID: " + sid, "Dialog", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(new JFrame(), "Failed to remove course for student ID: " + sid, "Dialog", JOptionPane.ERROR_MESSAGE);
+            }
+            
+            
+            stmt2 = con.createStatement();
+            String tableName = sid + "_grades"; 
+            String sql2 = "DROP TABLE IF EXISTS " + tableName;
+            stmt2.executeUpdate(sql2);
+            
+            
+            
+            
+         
+    }
+
+
+
+
+
+ if (rs != null) rs.close();
+    if (pst != null) pst.close();
+    con.close();
+
+} catch (Exception e) {
+    e.printStackTrace();
+}
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void submit_button_gradeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit_button_gradeActionPerformed
+        String sem = (String) semester_count.getSelectedItem();
+String subject = (String) subject_combobox_grades.getSelectedItem();
+String grade = grade_textfield.getText();
+String student_id = student_search_textfield.getText();
+String semester = null;
+int check = 0;
+
+// Determine the semester based on user selection
+if (sem.equals("1")) {
+    semester = "first_sem";
+} else if (sem.equals("2")) {
+    semester = "second_sem";
+} else if (sem.equals("3")) {
+    semester = "third_sem";
+}
+
+try {
+    Class.forName("com.mysql.cj.jdbc.Driver");
+    String url = "jdbc:MySQL://localhost:3306/sms";
+    String us = "root";
+    String ps = "";
+
+    Connection con = DriverManager.getConnection(url, us, ps);
+
+    // Prepare the update statement
+    PreparedStatement pst = con.prepareStatement("UPDATE " + student_id + "_grades SET " + semester + "=? WHERE subjects=?");
+    
+    // Set parameters for the PreparedStatement
+    pst.setString(1, grade);
+    pst.setString(2, subject);
+
+    if ("".equals(student_id)) {
+        JOptionPane.showMessageDialog(new JFrame(), "Input Student ID to insert at " + semester, "Dialog", JOptionPane.WARNING_MESSAGE);
+    } else if ("".equals(grade)) {
+        JOptionPane.showMessageDialog(new JFrame(), "Input Grade to insert at " + semester, "Dialog", JOptionPane.WARNING_MESSAGE);
+    } else {
+        // Execute the update
+        int rowsAffected = pst.executeUpdate();
+        
+        // Check if any rows were updated
+        if (rowsAffected < 1) {
+            // Grade table does not exist
+            JOptionPane.showMessageDialog(new JFrame(), "Grade table does not exist", "Dialog", JOptionPane.ERROR_MESSAGE);
+        } else {
+            // Update successful
+            update_GradeTable();
+        }
+    }
+
+    pst.close();
+    con.close();
+
+} catch (Exception e) {
+    // Handle exceptions
+    e.printStackTrace();
+    JOptionPane.showMessageDialog(new JFrame(), "An error occurred: " + e.getMessage(), "Dialog", JOptionPane.ERROR_MESSAGE);
+}
+
+        
+        
+    }//GEN-LAST:event_submit_button_gradeActionPerformed
+
+    private void update_GradeTable(){
+        
+        String sem = (String) semester_count.getSelectedItem();
+String subject = (String) subject_combobox_grades.getSelectedItem();
+String grade = grade_textfield.getText();
+String student_id = student_search_textfield.getText();
+
+DefaultTableModel model = (DefaultTableModel) grade_table.getModel();
+model.setRowCount(0);
+ResultSet rs;
+
+try {
+    Class.forName("com.mysql.cj.jdbc.Driver");
+    String url = "jdbc:mysql://localhost:3306/sms";
+    String us = "root";
+    String ps = "";
+
+    Connection con = DriverManager.getConnection(url, us, ps);
+
+    PreparedStatement pst = con.prepareStatement("SELECT subjects, first_sem, second_sem, third_sem  FROM " + student_id + "_grades");
+
+    rs = pst.executeQuery();
+
+    float average_grade = 0.0f;
+    int count = 0;
+
+    while (rs.next()) {
+    String subjects = rs.getString("subjects");
+    String first_sem = rs.getString("first_sem");
+    String second_sem = rs.getString("second_sem");
+    String third_sem = rs.getString("third_sem");
+    float average;
+
+    
+    if (first_sem != null && second_sem != null && third_sem != null) {
+        average = (Float.parseFloat(first_sem) + Float.parseFloat(second_sem) + Float.parseFloat(third_sem)) / 3.0f;
+    } else if (first_sem != null && second_sem != null) {
+        average = (Float.parseFloat(first_sem) + Float.parseFloat(second_sem)) / 2.0f;
+    } else if (first_sem != null) {
+        
+        average = Float.parseFloat(first_sem);
+    } else {
+        
+        average = 0.0f;
+    }
+
+    count++;
+    average_grade += average;
+    model.addRow(new Object[]{subjects, first_sem, second_sem, third_sem, String.format("%.1f", average)});
+}
+
+    
+   
+    if (count > 0) {
+        average_grade /= (float) count;
+        average_grade_text.setText(String.format("%.1f", average_grade));
+        
+        
+        if (average_grade >2.5f){
+            pass_check.setText("Did Not Passed!");
+            pass_check.setForeground(Color.red);
+        } else {
+            pass_check.setText("Passed!");
+        }
+    } else {
+        average_grade_text.setText("N/A");
+    }
+    
+    
+    
+    
+    
+
+} catch (Exception e) {
+    e.printStackTrace(); 
+}
+
+    }
+    
+    
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        update_GradeTable();
+    }//GEN-LAST:event_jButton16ActionPerformed
+
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+        String student_id = search_student_grade_table.getText();
+        DefaultTableModel model = (DefaultTableModel) grade_table.getModel();
+model.setRowCount(0);
+        
+        ResultSet rs;
+
+try {
+    Class.forName("com.mysql.cj.jdbc.Driver");
+    String url = "jdbc:mysql://localhost:3306/sms";
+    String us = "root";
+    String ps = "";
+
+    Connection con = DriverManager.getConnection(url, us, ps);
+
+    PreparedStatement pst = con.prepareStatement("SELECT subjects, first_sem, second_sem, third_sem  FROM " + student_id + "_grades");
+
+    rs = pst.executeQuery();
+
+    float average_grade = 0.0f;
+    int count = 0;
+
+    while (rs.next()) {
+    String subjects = rs.getString("subjects");
+    String first_sem = rs.getString("first_sem");
+    String second_sem = rs.getString("second_sem");
+    String third_sem = rs.getString("third_sem");
+    float average;
+
+    
+    if (first_sem != null && second_sem != null && third_sem != null) {
+        average = (Float.parseFloat(first_sem) + Float.parseFloat(second_sem) + Float.parseFloat(third_sem)) / 3.0f;
+    } else if (first_sem != null && second_sem != null) {
+        average = (Float.parseFloat(first_sem) + Float.parseFloat(second_sem)) / 2.0f;
+    } else if (first_sem != null) {
+        
+        average = Float.parseFloat(first_sem);
+    } else {
+        
+        average = 0.0f;
+    }
+
+    count++;
+    average_grade += average;
+    model.addRow(new Object[]{subjects, first_sem, second_sem, third_sem, String.format("%.1f", average)});
+}
+
+    
+   
+    if (count > 0) {
+        average_grade /= (float) count;
+        average_grade_text.setText(String.format("%.1f", average_grade));
+        
+        
+        if (average_grade >2.5f){
+            pass_check.setText("Did Not Passed!");
+            pass_check.setForeground(Color.red);
+        } else {
+            pass_check.setText("Passed!");
+        }
+    } else {
+        average_grade_text.setText("N/A");
+    }
+    
+    
+    
+    
+    
+
+} catch (Exception e) {
+    e.printStackTrace(); 
+}
+        
+        
+    }//GEN-LAST:event_jButton17ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2989,7 +3793,9 @@ update_attendance_table();
     private javax.swing.JPanel attendance;
     private javax.swing.JButton attendance_button;
     private javax.swing.JTable attendance_table;
+    private javax.swing.JLabel average_grade_text;
     private javax.swing.JButton check_button;
+    private javax.swing.JLabel course;
     private javax.swing.JButton courseManagement_button;
     private javax.swing.JTextField course_id_textfield;
     private javax.swing.JButton course_info_button;
@@ -3003,18 +3809,25 @@ update_attendance_table();
     private javax.swing.JTextField course_textfield;
     private javax.swing.JComboBox<String> courses_combobox;
     private javax.swing.JComboBox<String> day_combobox;
+    private javax.swing.JLabel first_name;
     private javax.swing.JLabel first_name_label;
     private javax.swing.JPanel grade;
+    private javax.swing.JTable grade_table;
+    private javax.swing.JTextField grade_textfield;
     private javax.swing.JButton grades_button;
     private javax.swing.JPanel home;
     private javax.swing.JButton home_button;
     private javax.swing.JTextField instructor_textfield;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JDesktopPane jDesktopPane2;
@@ -3046,7 +3859,18 @@ update_attendance_table();
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -3062,7 +3886,12 @@ update_attendance_table();
     private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel18;
+    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel20;
+    private javax.swing.JPanel jPanel21;
+    private javax.swing.JPanel jPanel22;
+    private javax.swing.JPanel jPanel23;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
@@ -3075,34 +3904,44 @@ update_attendance_table();
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
+    private javax.swing.JLabel last_name;
     private javax.swing.JLabel last_name_label;
     private javax.swing.JComboBox<String> meeting_combobox;
     private javax.swing.JButton message_button;
     private javax.swing.JDesktopPane message_panel;
     private javax.swing.JButton notification_button;
     private javax.swing.JDesktopPane notification_panel;
+    private javax.swing.JLabel pass_check;
     private javax.swing.JComboBox<String> pick_course_combobox;
     private javax.swing.JButton refresh_button;
     private javax.swing.JButton remove_course;
     private javax.swing.JComboBox<String> schedule_row_combobox;
     private javax.swing.JButton searchCourse_button;
     private javax.swing.JButton search_student;
+    private javax.swing.JButton search_student_button;
+    private javax.swing.JTextField search_student_grade_table;
     private javax.swing.JButton search_student_information;
+    private javax.swing.JComboBox<String> semester_count;
     private javax.swing.JTable student_course_table;
     private javax.swing.JTextField student_id_search;
     private javax.swing.JTextField student_id_textfield;
     private javax.swing.JButton student_info_button;
     private javax.swing.JPanel student_information;
     private javax.swing.JComboBox<String> student_name_combobox;
+    private javax.swing.JTextField student_search_textfield;
     private javax.swing.JComboBox<String> subject_attendance_combobox;
     private javax.swing.JComboBox<String> subject_combobox;
+    private javax.swing.JComboBox<String> subject_combobox_grades;
     private javax.swing.JTextField subject_id_textfield;
     private javax.swing.JTextField subject_name_textfield;
+    private javax.swing.JButton submit_button_grade;
     private javax.swing.JPanel tab;
+    private javax.swing.JLabel table_title;
     private javax.swing.JTextField time_textfield;
     private javax.swing.JButton unchecked_button;
     private javax.swing.JButton update_Course;
